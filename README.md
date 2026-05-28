@@ -40,6 +40,7 @@ Sections, in order:
 | Rollback plan | How to undo if it breaks production |
 | Deployment Notes | Env vars, feature flags, ordering with other PRs |
 | Author Checklist | Three confirmations the author ticks **after** reviewing |
+| Reviewer Checklist | Eight verifications the code reviewer ticks **after** reviewing the diff |
 
 ### `SKILL.md`
 
@@ -47,7 +48,7 @@ A [Claude Code skill](https://docs.claude.com/en/docs/claude-code/skills) that t
 
 The skill also encodes the things only the human author can truthfully do — Claude is explicitly told not to do them:
 
-- **Author Checklist boxes stay unchecked.** Claude will never pre-tick `I have personally reviewed…`, `/code-review`, or `/security-review`. Those confirmations belong to the human author after they've actually done the work.
+- **Author Checklist and Reviewer Checklist boxes stay unchecked.** Claude will never pre-tick any author confirmation or reviewer verification box. Author boxes belong to the human author after they've done the prep work; reviewer boxes belong to the human reviewer after they've verified the diff.
 - **Screenshots are placeholder-only.** For UI changes, Claude writes `TODO: attach screenshot` rather than fabricating, embedding, or describing an imaginary screenshot. The author attaches the real artifact when they open the PR.
 - **Missing facts become `TODO:` lines, not invented content.** Claude never makes up ticket numbers, test results, or rollback procedures.
 
