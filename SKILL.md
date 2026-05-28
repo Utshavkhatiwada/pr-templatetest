@@ -36,6 +36,17 @@ markdown
 - [ ] I have personally reviewed the code I pushed
 - [ ] I ran `/code-review` on my code
 - [ ] I ran `/security-review` on my code
+
+## Reviewer Checklist
+
+- [ ] The diff does what the Summary and Changes sections claim.
+- [ ] Tests meaningfully cover the change (or the Test section justifies why not).
+- [ ] The Risk rating and Rollback plan are realistic for the actual diff.
+- [ ] No secrets, credentials, API keys, or sensitive data in the diff.
+- [ ] Naming, style, and structure are consistent with the surrounding code.
+- [ ] Breaking changes, schema migrations, and new dependencies are explicitly called out.
+- [ ] For UI changes: the attached screenshot/recording matches the described behavior.
+- [ ] Deployment Notes cover everything needed to ship (env vars, flags, ordering with other PRs).
 How to fill each section
 Summary
 One to three sentences describing what this PR does at a high level. Plain English, no jargon. A reviewer should understand the scope of the change from this alone.
@@ -75,11 +86,25 @@ I ran /code-review on my code — the author ran the /code-review command in Cla
 I ran /security-review on my code — the author ran the /security-review command in Claude Code on the changes.
 These boxes MUST be left unchecked (- [ ]) when Claude generates the PR description. The human author is the only one who can truthfully tick them, after the review has actually happened.
 
+Reviewer Checklist
+Eight verifications the reviewer performs on the diff before approving:
+
+The diff does what the Summary and Changes sections claim — the code matches the stated intent.
+Tests meaningfully cover the change — actual coverage of the new behavior, not just that tests exist; or the Test section justifies why not.
+The Risk rating and Rollback plan are realistic for the actual diff — not boilerplate.
+No secrets, credentials, API keys, or sensitive data in the diff.
+Naming, style, and structure are consistent with the surrounding code.
+Breaking changes, schema migrations, and new dependencies are explicitly called out.
+For UI changes: the attached screenshot/recording matches the described behavior.
+Deployment Notes cover everything needed to ship — env vars, feature flags, ordering with other PRs.
+Like the Author Checklist, these boxes MUST be left unchecked (- [ ]) when Claude generates the PR description. Claude is not the reviewer; the human reviewer ticks each box only after verifying it.
+
 Rules
 Use the section headings exactly as written, in the order above.
 Don't add, rename, or merge sections.
 Render the description as Markdown with ## headings.
 Leave the Author Checklist boxes unchecked (- [ ]). Never pre-check them — those confirmations belong to the human author.
+Leave the Reviewer Checklist boxes unchecked (- [ ]). Never pre-check them — those confirmations belong to the human reviewer.
 For the Screenshot section, never invent, embed, or describe a screenshot. The author attaches it manually before opening the PR. When generating the body, leave a `TODO: attach screenshot` placeholder (or write "N/A" if the change has no UI impact).
 If you lack information for a section, ask the user OR write TODO: <what's needed> so they can fill it in before submitting. Never fabricate content.
 When NOT to use this skill
