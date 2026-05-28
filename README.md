@@ -31,7 +31,7 @@ Sections, in order:
 | Section | Purpose |
 |---|---|
 | Summary | 1–3 sentences — what this PR does at a high level |
-| Ticket/Issue (if related) | Jira/GitHub ticket reference, or `N/A` |
+| Ticket/Issue (if related) | GitHub ticket reference, or `N/A` |
 | Motivation | The *why* — business or technical reason |
 | Changes | The *what* — bulleted list of concrete changes |
 | Test | How the change was tested |
